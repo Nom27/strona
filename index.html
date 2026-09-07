@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usługi Tapicerskie – Mistrzowskie Wykończenie</title>
+    <!-- Główne style CSS -->
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #c0392b;
+            --bg-color: #f8f9fa;
+            --text-color: #333;
+            --card-bg: #ffffff;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+        }
+
+        /* Nawigacja & Header */
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1.5rem 2rem;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            font-weight: 300;
+            opacity: 0.9;
+        }
+
+        /* Sekcje */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: var(--primary-color);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background: var(--accent-color);
+            margin: 0.5rem auto 0;
+        }
+
+        /* O nas & Dane firmy */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .info-card {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        .info-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .contact-list {
+            list-style: none;
+        }
+
+        .contact-list li {
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+        }
+
+        /* Gablota / Galeria */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            background: var(--card-bg);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .gallery-caption {
+            padding: 1rem;
+            background: white;
+        }
+
+        .gallery-caption h4 {
+            color: var(--primary-color);
+            margin-bottom: 0.3rem;
+        }
+
+        .gallery-caption p {
+            font-size: 0.85rem;
+            color: #666;
+        }
+
+        /* Modal / Lightbox */
+        .lightbox {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .lightbox img {
+            max-width: 90%;
+            max-height: 80%;
+            border-radius: 4px;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        /* Stopka */
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 3rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Tapicerstwo Meblowe – Jan Kowalski</h1>
+        <p>Drugie życie Twoich ulubionych mebli. Pasja, precyzja, tradycja.</p>
+    </header>
+
+    <div class="container">
+        
+        <!-- Sekcja z danymi firmy -->
+        <section class="info-grid">
+            <div class="info-card">
+                <h3>O warsztacie</h3>
+                <p>Zajmujemy się profesjonalną renowacją oraz wykonywaniem mebli tapicerowanych na zamówienie. Pracujemy na materiałach najwyższej jakości, dbając o każdy detal wykończenia.</p>
+            </div>
+            <div class="info-card">
+                <h3>Kontakt i Adres</h3>
+                <ul class="contact-list">
+                    <li>📍 <strong>Adres:</strong> ul. Stolarska 12, 00-000 Warszawa</li>
+                    <li>📞 <strong>Telefon:</strong> +48 123 456 789</li>
+                    <li>✉️ <strong>E-mail:</strong> kontakt@tapicer-kowalski.pl</li>
+                    <li>🕒 <strong>Godziny otwarcia:</strong> Pn-Pt: 8:00 - 17:00</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Sekcja Galeria / Gablota -->
+        <h2 class="section-title">Nasze Realizacje</h2>
+
+        <div class="gallery-grid">
+            
+            <div class="gallery-item" onclick="openLightbox('https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=1000')">
+                <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=500" alt="Fotel uszak">
+                <div class="gallery-caption">
+                    <h4>Elegancji Fotel Uszak</h4>
+                    <p>Renowacja w welurze butelkowa zieleń</p>
+                </div>
+            </div>
+
+            <div class="gallery-item" onclick="openLightbox('https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=1000')">
+                <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=500" alt="Zielony narożnik">
+                <div class="gallery-caption">
+                    <h4>Narożnik Do Salonu</h4>
+                    <p>Nowe wypełnienie i tkanina hydrofobowa</p>
+                </div>
+            </div>
+
+            <div class="gallery-item" onclick="openLightbox('https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=1000')">
+                <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=500" alt="Tapicerowane łóżko">
+                <div class="gallery-caption">
+                    <h4>Wezgłowie Łóżka</h4>
+                    <p>Sypialnia na wymiar – głębokie pikowanie</p>
+                </div>
+            </div>
+
+            <div class="gallery-item" onclick="openLightbox('https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?w=1000')">
+                <img src="https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?w=500" alt="Krzesło skórzane">
+                <div class="gallery-caption">
+                    <h4>Komplet Krzeseł Jadalnianych</h4>
+                    <p>Wymiana pianek i naturalna skóra</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Okno do powiększania zdjęć (Lightbox) -->
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <span class="lightbox-close">&times;</span>
+        <img id="lightbox-img" src="" alt="Powiększone zdjęcie">
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Tapicerstwo Jan Kowalski. Wszelkie prawa zastrzeżone.</p>
+    </footer>
+
+    <!-- Prosty kod JavaScript do obsługi powiększania zdjęć -->
+    <script>
+        function openLightbox(src) {
+            document.getElementById('lightbox-img').src = src;
+            document.getElementById('lightbox').style.display = 'flex';
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
